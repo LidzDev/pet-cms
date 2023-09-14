@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Graphical testing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+    <div id="grid-container">
+        <div id="logo-area"><img src="{{ url_for('static', filename='images/cat_avatar.jpeg') }}" alt="cat"></div>
+        <div id="title-area">
+            <h1>My Client List</h1>
+        </div>
+        <nav id="flex-navbar">
+            <ul>
+                <li>All Clients</li>
+                <li>Bookings</li>
+                <li>Visits</li>
+            </ul>
+        </nav>
+        <div id="content-area">
+            {% block stuff %}
+
+            {% endblock %}
+        </div>
+        {# <div id="blank"><p>blank area</p></div> #}
+        <footer>&copy;LidzDev 2023</footer>
+    </div>
+</body>
+</html>
