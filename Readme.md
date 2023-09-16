@@ -31,7 +31,3 @@ As well as downloading the project files from github please make sure all requir
 7. and then 'flask db migrate'
 8. and then 'flask db upgrade'
 9. and then 'flask seed'
-
-
-If you are interested in having a look at how the tasks to create the project were planned out you can see those here:
-https://trello.com/invite/b/oTlIXWkt/ATTI95e0f0867845993090d48419f80eec90DABC1F55/week-5-project
