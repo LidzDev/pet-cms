@@ -13,7 +13,7 @@ Psychopg2 2.9.7
 
 the following are non required elements:
 
-Postico 2.0.4
+Postico 2.0.4 *
 
 The project was powered by:
 
@@ -28,6 +28,9 @@ As well as downloading the project files from github please make sure all requir
 4. In the terminal create the database with createdb pet_cms
 5. Open app.py with a code editor and comment line 8 and uncomment line 7 and replace 'postgres:password' with your postgres username
 6. In the terminal do 'flask db init'
+7. and then 'flask db migrate'
+8. and then 'flask db upgrade'
+9. and then 'flask seed'
 
 
 If you are interested in having a look at how the tasks to create the project were planned out you can see those here:
