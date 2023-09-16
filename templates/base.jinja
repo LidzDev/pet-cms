@@ -8,13 +8,13 @@
     <div id="grid-container">
         <div id="logo-area"><img src="{{ url_for('static', filename='images/cat_avatar.jpeg') }}" alt="cat"></div>
         <div id="title-area">
-            <h1>My Client List</h1>
+            <h1>My Pet Client Management System</h1>
         </div>
         <nav id="flex-navbar">
             <ul>
-                <li>All Clients</li>
-                <li>Bookings</li>
-                <li>Visits</li>
+                <li>My Clients</li>
+                <li>All Bookings</li>
+                <li>Add new Client</li>
             </ul>
         </nav>
         <div id="content-area">
@@ -22,8 +22,13 @@
 
             {% endblock %}
         </div>
-        {# <div id="blank"><p>blank area</p></div> #}
-        <footer>&copy;LidzDev 2023</footer>
+            <nav id="footer-nav">
+                <hr>
+                <a href="https://github.com/LidzDev/">Lidz' github</a> | <a href="https://github.com/LidzDev/pet-cms">Pet CMS on Github</a> | <a href="https://trello.com/b/oTlIXWkt/week-5-project">Pet CMS on Trello</a>
+            </nav>
+            <div id="copyright">
+                <hr>
+                &copy;LidzDev 2023</div>
     </div>
 </body>
 </html>

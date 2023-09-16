@@ -6,7 +6,8 @@ body {
 #flex-navbar {
     display: flex;
     grid-area: left;
-    padding: 30px;
+    padding-left: 30px;
+    padding-top: 20px;
 }
 
 ul {
@@ -15,6 +16,34 @@ ul {
     list-style: none;
 }
 
+hr {
+    margin-inline: 0;
+    border: 1px solid grey;
+}
+
+/* unvisited link */
+a:link {
+    color: rgb(35, 79, 214);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(96, 104, 124);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: blueviolet;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+#flex-navbar > ul > li {
+    padding-bottom: 20px;
+}
 #logo-area{
     padding: 10px;
     grid-area: logo;
@@ -25,7 +54,7 @@ img {
     height: 150px; 
 }
 #title-area {
-    padding-top: 3rem;
+    padding-top: 2rem;
     text-align: justify;
     grid-area: top;
 }
@@ -36,22 +65,29 @@ img {
     margin: 0px;
 }
 
- #blank {
-    grid-area: blank;
+#content-area > ul > li {
+    padding-top: .5rem;
 }
 
-footer {
-    grid-area: bottom;
+#footer-nav {
     font-size: smaller;
-    text-align: right;
     padding-top: 2rem;
+    text-align: left;
+    grid-area: bleft;
+}
+
+#copyright {
+    font-size: smaller;
+    padding-top: 2rem;
+    grid-area: bright;
+    text-align: right;
 }
 
 #grid-container {
     display: grid;
     grid-template-areas:
-        'logo top'
-        'left right'
-        'left bottom';
-    grid-template-columns: 30% 70%;
+        'logo  top top'
+        'left right right'
+        'bleft bleft bright';
+    grid-template-columns: 30% 60% 10%;
 }
