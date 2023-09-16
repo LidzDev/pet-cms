@@ -24,10 +24,13 @@ As well as downloading the project files from github please make sure all requir
 1. In the terminal in the application folder execute:
     flask run
 2. Open a browser and open http://127.0.0.1:4999/
-3. In the terminal start postgres with brew services start postgresql@14
-4. In the terminal create the database with createdb pet_cms
+3. In the terminal start postgres with:
+    brew services start postgresql@14
+4. In the terminal create the database with:
+    createdb pet_cms
 5. Open app.py with a code editor and comment line 8 and uncomment line 7 and replace 'postgres:password' with your postgres username
-6. In the terminal do 'flask db init'
-7. and then 'flask db migrate'
-8. and then 'flask db upgrade'
-9. and then 'flask seed'
+6. In the terminal run:
+    flask db init
+    flask db migrate
+    flask db upgrade
+    flask seed
