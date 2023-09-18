@@ -71,6 +71,10 @@ img {
     margin: 0px;
 }
 
+#extra-content > ul > li {
+    padding-top: .5rem;
+}
+
 #content-area > ul > li {
     padding-top: .5rem;
 }
