@@ -41,11 +41,23 @@
 </form>
 </div>
 <div id="extra-content">
-<h3>{{client.first_name}}'s Pets</h3>
-<ul>
-{% for pet in client.pets %}
-    <li>{{ pet.pet_name }}</li>
-{% endfor %}
-</ul>
+    <h3>{{client.first_name}}'s Pets</h3>
+    <table>
+    {% for pet in client.pets %}
+        <tr>
+            <td><a href="/pets/{{pet.id}}">{{ pet.pet_name }}</a></td>
+        </tr>
+    {% endfor %}
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <form id="bottom_align" name="delete_client" action="/clients/delete/{{client.id}}" method="post">
+                    <input type="submit" name="client_record" value="Delete {{client.first_name}}'s Record"/>
+                </form>
+            </td>
+        </tr>
+    </table>
 </div>
 {% endblock %}

@@ -79,6 +79,12 @@ img {
     padding-top: .5rem;
 }
 
+#label {
+    width: 100px;
+}
+#bottom-align {
+    vertical-align: baseline ;
+}
 #footer-nav {
     font-size: smaller;
     padding-top: 2rem;
