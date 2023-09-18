@@ -30,3 +30,23 @@ def update_client(id):
 @clients_blueprint.route("/clients/add")
 def show_add_client():
     return render_template("clients/add.jinja", title="Add a new Client to the CMS")
+
+@clients_blueprint.route("/clients/add", methods=["POST"])
+def save_client():
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    email = request.form["email"]
+    phone = request.form["phone"]
+    street = request.form["street"]
+    postcode = request.form["postcode"]
+    client_to_be_saved = Client(first_name=first_name, last_name=last_name, email=email, phone=phone, street=street, postcode=postcode)
+    db.session.add(client_to_be_saved)
+    db.session.commit()
+    return redirect("/clients")
+
+@clients_blueprint.route("/clients/delete/<int:id>", methods=["POST"])
+def delete_client(id):
+    client = Client.query.get(id)
+    db.session.delete(client)
+    db.session.commit()
+    return redirect("/clients")
