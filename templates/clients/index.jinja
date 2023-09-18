@@ -1,0 +1,12 @@
+{% extends 'catsitter_nav.jinja' %}
+
+{% block stuff %}
+<div id="content-area">
+<h3>All Clients</h3>
+<ul>
+    {% for client in clients %}
+        <li>{{client.first_name}} {{client.last_name}}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

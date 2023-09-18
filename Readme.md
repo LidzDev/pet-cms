@@ -1,4 +1,4 @@
-This project is intended to prototype a real business need and was build on the following required elements:
+This project is intended to prototype a real business need and was build on a mac on the following required elements. The installation information is Mac OS X based, please adjust based on your operating system.
 
 Python 3.11 *
 Postgresql 14 *

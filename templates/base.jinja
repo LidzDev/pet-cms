@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Graphical testing</title>
+  <title>{{ title }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
 </head>
 <body>
     <div id="grid-container">
         <div id="logo-area"><img src="{{ url_for('static', filename='images/cat_avatar.jpeg') }}" alt="cat"></div>
         <div id="title-area">
-            <h1>My Pet Client Management System</h1>
+            <h1>{{ title }}</h1>
         </div>
-        <nav id="flex-navbar">
-            <ul>
-                <li>My Clients</li>
-                <li>All Bookings</li>
-                <li>Add new Client</li>
-            </ul>
-        </nav>
-        <div id="content-area">
-            {% block stuff %}
+            {% block navbar %}
 
-            {% endblock %}
-        </div>
+            {% endblock %}        
             <nav id="footer-nav">
                 <hr>
                 <a href="https://github.com/LidzDev/">Lidz' github</a> | <a href="https://github.com/LidzDev/pet-cms">Pet CMS on Github</a> | <a href="https://trello.com/b/oTlIXWkt/week-5-project">Pet CMS on Trello</a>

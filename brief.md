@@ -2,7 +2,7 @@
 You've been tasked with making a booking system for a catsitter. The catsitter wants to allow her regular local clients to book catsitting visits via an online interface.
 
 ## MVP
-A 'Client' needs to be able to enter and update their name and address (street, postcode) and information about their 'Cat's (name, age) and dates they would like to book 'Visits' for. The Catsitter needs to be able to add new clients and delete clients she does not want to work with anymore. The Catsitter needs to be able to see a list of visits.
+A 'Client' needs to be able to enter and update their name and address (street, postcode) and information about their 'Pet's (name, age) and dates they would like to create a 'Booking' for. The Catsitter needs to be able to add new clients and delete clients she does not want to work with anymore. The Catsitter needs to be able to see a list of visits.
 
 ## Extensions
 - GDPR means that the client needs to be able to delete their data so that the catsitting CMS is legally compliant

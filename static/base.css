@@ -24,22 +24,22 @@ hr {
 /* unvisited link */
 a:link {
     color: rgb(35, 79, 214);
-  }
-  
+}
+
   /* visited link */
-  a:visited {
+a:visited {
     color: rgb(96, 104, 124);
-  }
-  
+}
+
   /* mouse over link */
-  a:hover {
+a:hover {
     color: blueviolet;
-  }
-  
+}
+
   /* selected link */
-  a:active {
+a:active {
     color: blue;
-  }
+}
 
 #flex-navbar > ul > li {
     padding-bottom: 20px;

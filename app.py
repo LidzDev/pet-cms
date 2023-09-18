@@ -17,9 +17,13 @@ migrate = Migrate(app, db)
 from seed import seed
 app.cli.add_command(seed)
 
+from controllers.clients_controller import clients_blueprint
+
+app.register_blueprint(clients_blueprint)
+
 @app.route('/')
 def home():
-    return render_template('visual.jinja')
+    return render_template('visual.jinja', title ="Hello World")
 
 if __name__ == '__main__':
     app.run(debug=True)
