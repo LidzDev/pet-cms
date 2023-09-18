@@ -60,6 +60,12 @@ img {
 }
 
 #content-area {
+    grid-area: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+#extra-content{
     grid-area: right;
     padding: 0px;
     margin: 0px;
@@ -87,7 +93,7 @@ img {
     display: grid;
     grid-template-areas:
         'logo  top top'
-        'left right right'
+        'left center right'
         'bleft bleft bright';
-    grid-template-columns: 30% 60% 10%;
+    grid-template-columns: 30% 40% 30%;
 }

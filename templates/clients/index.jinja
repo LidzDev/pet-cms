@@ -5,7 +5,7 @@
 <h3>All Clients</h3>
 <ul>
     {% for client in clients %}
-        <li>{{client.first_name}} {{client.last_name}}</li>
+        <li><a href="/clients/{{client.id}}">{{client.first_name}} {{client.last_name}}</a></li>
     {% endfor %}
 </ul>
 </div>

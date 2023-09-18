@@ -3,7 +3,7 @@
 {% block stuff %}
 <div id="content-area">
 <h3>Client Information</h3>
-<form name="update_client" action="clients/{{client.id}}" method="post">
+<form name="update_client" action="/clients/{{client.id}}" method="post">
     <table>
         <tr>
             <td><label for="first_name">First name:</label></td>
@@ -39,5 +39,13 @@
         </tr>
     </table>
 </form>
+</div>
+<div id="extra-content">
+<h3>{{client.first_name}}'s Pets</h3>
+<ul>
+{% for pet in client.pets %}
+    <li>{{ pet.pet_name }}</li>
+{% endfor %}
+</ul>
 </div>
 {% endblock %}
