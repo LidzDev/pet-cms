@@ -1,0 +1,43 @@
+{% extends 'catsitter_nav.jinja' %}
+
+{% block stuff %}
+<div id="content-area">
+<h3>Client Information</h3>
+<form name="update_client" action="clients/{{client.id}}" method="post">
+    <table>
+        <tr>
+            <td><label for="first_name">First name:</label></td>
+            <td><input type="text" size="30" name="first_name" id="first_name" required="yes" value="{{client.first_name}}"/></td>
+        </tr>
+        <tr>
+            <td><label for="last_name">Last name:</label></td>
+            <td><input type="text" size="30" name="last_name" id="last_name" required="yes" value="{{client.last_name}}"/></td>
+        </tr>
+        <tr>
+            <td><label for="email">email:</label></td>
+            <td><input type="email" size="30" name="email" id="email" required="yes" value="{{client.email}}"/></td>
+        </tr>
+        <tr>
+            <td><label for="phone">phone:</label></td>
+            <td><input type="text" size="30" name="phone" id="phone" required="yes" value="{{client.phone}}"/></td>
+        </tr>
+        <tr>
+            <td><label for="street">street:</label></td>
+            <td><input type="text" size="30" name="street" id="street" required="yes" value="{{client.street}}"/></td>
+        </tr>
+        <tr>
+            <td><label for="postcode">postcode:</label></td>
+            <td><input type="text" size="30" name="postcode" id="postcode" required="yes" value="{{client.postcode}}"/></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Update client"/></td>
+        </tr>
+    </table>
+</form>
+</div>
+{% endblock %}
