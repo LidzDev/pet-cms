@@ -26,3 +26,7 @@ def update_client(id):
     db.session.commit()
     redirect_string = "/clients/" + str(id)
     return redirect(redirect_string)
+
+@clients_blueprint.route("/clients/add")
+def show_add_client():
+    return render_template("clients/add.jinja", title="Add a new Client to the CMS")
