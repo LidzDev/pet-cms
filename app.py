@@ -10,16 +10,14 @@ app.config["SQLALCHEMY_ECHO"]= True
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# from models.client import Client
-# from models.pet import Pet
-# from models.booking import Booking
-
 from seed import seed
 app.cli.add_command(seed)
 
 from controllers.clients_controller import clients_blueprint
+from controllers.bookings_controller import bookings_blueprint
 
 app.register_blueprint(clients_blueprint)
+app.register_blueprint(bookings_blueprint)
 
 @app.route('/')
 def home():
