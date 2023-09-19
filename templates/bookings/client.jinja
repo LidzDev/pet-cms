@@ -5,8 +5,8 @@
 <h3>Book a visit</h3>
     <table>  
         <tr>
-            <form name="add_booking" action="/bookings/add/{{client.id}}" method="post"></form>    
-                <td><input type="date" name="booking" id="booking" required="yes" min=2023-09-19></td>
+            <form name="add_booking" action="/bookings/add/{{client.id}}" method="post"> 
+                <td><input type="date" name="booking_date" id="booking_date" required="yes" min=2023-09-19></td>
                 <td><input type="submit" value="Book visit"/></td>
             </form>
         </tr>

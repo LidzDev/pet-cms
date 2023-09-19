@@ -29,7 +29,13 @@ def update_client(id):
     client.street = request.form["street"]
     client.postcode = request.form["postcode"]
     db.session.commit()
-    redirect_string = "/clients/" + str(id)
+    referrer = request.referrer
+    print(f"the referrer is {referrer}")
+    if "/clients/me/" in referrer:
+        redirect_string = "/clients/me/" + str(id)
+    else: 
+        redirect_string = "/clients/" + str(id)
+    print(f"the redirect is {redirect_string}")
     return redirect(redirect_string)
 
 @clients_blueprint.route("/clients/add")
@@ -54,4 +60,10 @@ def delete_client(id):
     client = Client.query.get(id)
     db.session.delete(client)
     db.session.commit()
-    return redirect("/clients")
+    referrer = request.referrer
+    if "/clients/me/" in referrer:
+        redirect_string = "/"
+    else: 
+        redirect_string = "/clients"
+    print(f"the redirect is {redirect_string}")
+    return redirect(redirect_string)
