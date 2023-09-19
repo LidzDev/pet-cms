@@ -15,9 +15,11 @@ app.cli.add_command(seed)
 
 from controllers.clients_controller import clients_blueprint
 from controllers.bookings_controller import bookings_blueprint
+from controllers.pets_controller import pets_blueprint
 
 app.register_blueprint(clients_blueprint)
 app.register_blueprint(bookings_blueprint)
+app.register_blueprint(pets_blueprint)
 
 @app.route('/')
 def home():
