@@ -1,0 +1,40 @@
+{% extends 'client_nav.jinja' %}
+
+{% block stuff %}
+<div id="content-area">
+<h3>Pet information</h3>
+    <table>  
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>            
+            <td>&nbsp;</td>            
+        </tr>
+    {% for pet in client.pets %}
+    <form name="update_pet" action="/pets/update/{{pet.id}}" method="post">   
+        <tr>
+            <td><input type="text" size="30" name="pet_name" id="pet_name" required="yes" value="{{ pet.pet_name }}"></td>
+            <td><input type="number" name="pet_age" id="pet_age" required="yes" value="{{ pet.age }}"></td>
+            <td><input type="submit" value="Update {{pet.pet_name}}"></td>
+        </tr>
+    </form>
+    {% endfor %}
+        </tr>
+    <form name="add_pet" action="/pets/client/add/{{client.id}}" method="post">   
+        <tr>
+            <td><input type="text" size="30" name="pet_name" id="pet_name" required="yes" value=""></td>
+            <td><input type="number" name="pet_age" id="pet_age" required="yes" value=""></td>
+            <td><input type="submit" value="Add Pet"></td>
+        </tr>
+    </form>
+    </table>
+
+</div>
+<div id="extra-content">
+
+</div>
+{% endblock %}

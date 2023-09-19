@@ -21,6 +21,16 @@ hr {
     border: 1px solid grey;
 }
 
+th {
+    font-weight: lighter;
+    padding-right: 40px;
+    text-align: left;
+    
+}
+td {
+    padding-right: 20px;
+}
+
 /* unvisited link */
 a:link {
     color: rgb(35, 79, 214);
