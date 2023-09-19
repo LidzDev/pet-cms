@@ -14,7 +14,7 @@
         </tr>
         {% for pet in pets %}
         <tr>
-            <td>{{ pet.pet_name }}</td><td>{{ pet.client.first_name }}</td>
+            <td>{{ pet.pet_name }}</td><td><a href="/clients/{{pet.client_id}}">{{ pet.client.first_name }}</a></td>
         </tr>
         {% endfor %}
     </table>
