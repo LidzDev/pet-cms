@@ -18,7 +18,7 @@
     <form name="update_pet" action="/pets/update/{{pet.id}}" method="post">   
         <tr>
             <td><input type="text" size="30" name="pet_name" id="pet_name" required="yes" value="{{ pet.pet_name }}"></td>
-            <td><input type="number" name="pet_age" id="pet_age" required="yes" value="{{ pet.age }}"></td>
+            <td><input type="number" style="width: 30px;" name="pet_age" id="pet_age" required="yes" value="{{ pet.age }}"></td>
             <td><input type="submit" value="Update {{pet.pet_name}}"></td>
         </tr>
     </form>
@@ -27,7 +27,7 @@
     <form name="add_pet" action="/pets/client/add/{{client.id}}" method="post">   
         <tr>
             <td><input type="text" size="30" name="pet_name" id="pet_name" required="yes" value=""></td>
-            <td><input type="number" name="pet_age" id="pet_age" required="yes" value=""></td>
+            <td><input type="number" style="width: 30px;" name="pet_age" id="pet_age" required="yes" value=""></td>
             <td><input type="submit" value="Add Pet"></td>
         </tr>
     </form>
@@ -35,6 +35,21 @@
 
 </div>
 <div id="extra-content">
-
+<h3>My data control</h3>
+    <table>
+        <tr>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        {% for pet in client.pets %}
+    <form name="remove_pet" action="/pets/delete/{{pet.id}}" method="post">   
+        <tr>
+            <td><input type="submit" value="Remove {{pet.pet_name}}'s record"></td>
+        </tr>
+    </form>
+    {% endfor %}
+    </table>
 </div>
 {% endblock %}
