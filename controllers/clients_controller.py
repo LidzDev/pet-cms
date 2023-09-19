@@ -14,6 +14,11 @@ def show_one_client(id):
     client_to_show = Client.query.get(id)
     return render_template("clients/show.jinja", title=f"Pet CMS Client: {client_to_show.first_name} {client_to_show.last_name}", client=client_to_show)
 
+@clients_blueprint.route("/clients/me/<int:id>")
+def show_my_client_detail(id):
+    client_to_show = Client.query.get(id)
+    return render_template("clients/me.jinja", title=f"Hi {client_to_show.first_name}", client=client_to_show)
+
 @clients_blueprint.route("/clients/<int:id>", methods=["POST"])
 def update_client(id):
     client = Client.query.get(id)

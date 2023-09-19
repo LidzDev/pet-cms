@@ -1,0 +1,45 @@
+{% extends 'client_nav.jinja' %}
+
+{% block stuff %}
+<div id="content-area">
+<h3>Book a visit</h3>
+    <table>  
+        <tr>
+            <form name="add_booking" action="/bookings/add/{{client.id}}" method="post"></form>    
+                <td><input type="date" name="booking" id="booking" required="yes" min=2023-09-19></td>
+                <td><input type="submit" value="Book visit"/></td>
+            </form>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+<h3>Visits booked in the system</h3>
+    <table>
+        {# {% for booking in client.bookings|sort(reverse="true", attribute="date") %} #}
+        {% for booking in client.bookings|sort(attribute="date") %}
+        <tr>
+            <td>{{ booking.date.strftime('%d/%m/%Y')}}</td>
+            <td>&nbsp;</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div id="extra-content">
+    <h3>For my pets</h3>
+    <table>
+    {% for pet in client.pets %}
+        <tr>
+            <td><a href="/pets/{{pet.id}}">{{ pet.pet_name }}</a></td>
+        </tr>
+    {% endfor %}
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

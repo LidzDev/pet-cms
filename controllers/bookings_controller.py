@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect
 from models.booking import Booking
+from models.client import Client
 from app import db
 
 bookings_blueprint = Blueprint("bookings", __name__)
@@ -9,10 +10,10 @@ def list_bookings():
     bookings = Booking.query.all()
     return render_template("bookings/index.jinja", title = "My Pet Client Management System", bookings = bookings)
 
-# @clients_blueprint.route("/clients/<int:id>")
-# def show_one_client(id):
-#     client_to_show = Client.query.get(id)
-#     return render_template("clients/show.jinja", title=f"Pet CMS Client: {client_to_show.first_name} {client_to_show.last_name}", client=client_to_show)
+@bookings_blueprint.route("/bookings/client/<int:id>")
+def show_client_booking(id):
+    client_to_show = Client.query.get(id)
+    return render_template("bookings/client.jinja", title=f"Hi {client_to_show.first_name}", client=client_to_show)
 
 # @clients_blueprint.route("/clients/<int:id>", methods=["POST"])
 # def update_client(id):
