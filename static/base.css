@@ -119,5 +119,5 @@ img {
         'logo  top top'
         'left center right'
         'bleft bleft bright';
-    grid-template-columns: 20% 50% 30%;
+    grid-template-columns: 20% 40% 40%;
 }

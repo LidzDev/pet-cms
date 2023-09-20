@@ -25,3 +25,14 @@ def save_client_booking(id):
     db.session.commit()
     redirect_string = "/bookings/client/" + str(id)
     return redirect(redirect_string)
+
+@bookings_blueprint.route("/bookings/delete/<int:id>", methods=["POST"])
+def delete_booking(id):
+    booking = Booking.query.get(id)
+    client_id = booking.client_id
+    db.session.delete(booking)
+    db.session.commit()
+    referrer = request.referrer
+    if "127.0.0" in referrer:
+        return redirect(referrer)
+    else: return("error!!!!!")

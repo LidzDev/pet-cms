@@ -21,7 +21,7 @@
         {% for booking in client.bookings|sort(attribute="date") %}
         <tr>
             <td>{{ booking.date.strftime('%d/%m/%Y')}}</td>
-            <td>&nbsp;</td>
+            <td><form name="cancel_booking" action="/bookings/delete/{{booking.id}}" method="post"><input type="submit" value="Cancel visit"/></td>
         </tr>
         {% endfor %}
     </table>

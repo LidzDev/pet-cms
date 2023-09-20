@@ -42,6 +42,18 @@
 </form>
 </div>
 <div id="extra-content">
+    <h3>Access Instructions</h3>
+    <table>
+        <form name="update_special" action="/clients/update_special/{{client.id}}" method="post">
+            <tr>
+                <td>Enter any special instructions on key handover or how to enter your building here:<br><textarea name=access_instructions id="access_instructions" rows="3" cols="50">{{client.access_instructions}}</textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="update_special" value="Update special instructions"/></td>
+            </tr>
+        </form>
+    </table>
+
     <h3>My data control</h3>
     <table>
         <tr>

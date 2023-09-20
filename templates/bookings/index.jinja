@@ -14,7 +14,9 @@
         </tr>       
         {% for booking in bookings|sort(attribute="date") %}
             <tr>
-                <td>{{ booking.date }}</td><td><a href="/clients/{{booking.client_id}}">{{ booking.client.first_name}} {{booking.client.last_name}}</a></td>
+                <td>{{ booking.date }}</td>
+                <td><a href="/clients/{{booking.client_id}}">{{ booking.client.first_name}} {{booking.client.last_name}}</a></td>
+ 
             </tr>
         {% endfor %}
     </table>

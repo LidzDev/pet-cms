@@ -40,6 +40,16 @@ def update_client(id):
     print(f"the redirect is {redirect_string}")
     return redirect(redirect_string)
 
+@clients_blueprint.route("/clients/update_special/<int:id>", methods=["POST"])
+def update_special(id):
+    client = Client.query.get(id)
+    client.access_instructions = request.form["access_instructions"]
+    db.session.commit()
+    referrer = request.referrer
+    if "127.0.0" in referrer:
+        return redirect(referrer)
+    else: return("error!!!!!")
+
 @clients_blueprint.route("/clients/add")
 def show_add_client():
     return render_template("clients/add.jinja", title="Add a new Client to the CMS")
