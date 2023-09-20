@@ -17,7 +17,7 @@
     </table>
 <h3>Visits booked in the system</h3>
     <table>
-        {# {% for booking in client.bookings|sort(reverse="true", attribute="date") %} #}
+        {# {% for booking in client.bookings|sort(attribute="date", reverse="true") %} #}
         {% for booking in client.bookings|sort(attribute="date") %}
         <tr>
             <td>{{ booking.date.strftime('%d/%m/%Y')}}</td>
@@ -31,7 +31,7 @@
     <table>
     {% for pet in client.pets %}
         <tr>
-            <td><a href="/pets/{{pet.id}}">{{ pet.pet_name }}</a></td>
+            <td>{{ pet.pet_name }}</td>
         </tr>
     {% endfor %}
         <tr>

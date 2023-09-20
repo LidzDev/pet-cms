@@ -92,6 +92,10 @@ img {
 #label {
     width: 100px;
 }
+
+#pet_age {
+    width: 50px;
+}
 #bottom-align {
     vertical-align: baseline ;
 }
@@ -115,5 +119,5 @@ img {
         'logo  top top'
         'left center right'
         'bleft bleft bright';
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 20% 50% 30%;
 }

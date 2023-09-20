@@ -45,7 +45,7 @@
     <table>
     {% for pet in client.pets %}
         <tr>
-            <td><a href="/pets/{{pet.id}}">{{ pet.pet_name }}</a></td>
+            <td>{{ pet.pet_name }}</td>
         </tr>
     {% endfor %}
         <tr>
