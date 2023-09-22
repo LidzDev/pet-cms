@@ -38,3 +38,5 @@ As well as downloading the project files from github please make sure all requir
     flask db migrate
     flask db upgrade
     flask seed
+
+<!-- consider using the markdown syntax to proply highlight and format the readme, here is a cheatsheet to get you started https://www.markdownguide.org/cheat-sheet/ -->
