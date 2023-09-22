@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:password@localhost:5432/pet_cms" 
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://lydia@localhost:5432/pet_cms"
-app.config["SQLALCHEMY_ECHO"]= False
+# toggle below to find out why weird things are happening
+# app.config["SQLALCHEMY_ECHO"]= True
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
