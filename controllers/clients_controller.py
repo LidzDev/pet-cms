@@ -3,6 +3,7 @@ from models.client import Client
 from models.pet import Pet
 from models.booking import Booking
 from app import db
+from helpers.data import handle_delete_client
 
 clients_blueprint = Blueprint("clients", __name__)
 
@@ -70,14 +71,7 @@ def save_client():
 @clients_blueprint.route("/clients/delete/<int:id>", methods=["POST"])
 def delete_client(id):
     client = Client.query.get(id)
-    for pet in client.pets:
-        pet = Pet.query.get(pet.id)
-        db.session.delete(pet)
-    for booking in client.bookings:
-        booking = Booking.query.get(booking.id)
-        db.session.delete(booking)
-    db.session.delete(client)
-    db.session.commit()
+    handle_delete_client(client)
     referrer = request.referrer
     if "/clients/me/" in referrer:
         redirect_string = "/"
