@@ -1,40 +1,46 @@
-This project is intended to prototype a real business need and was build on a mac on the following required elements. The installation information is Mac OS X based, please adjust based on your operating system.
+# Pet CMS
 
-Python 3.11 *
-Postgresql 14 *
-Pip3 *
-Flask 2.3.3
-Flask-Migrate 4.0.4
-Flask-SQLAlchemy 3.1.1
-Jinja2 3.1.2
-Psychopg2 2.9.7
+## Summary
+Petsitter client CMS + visit booking page for clients
 
-* install with brew, the rest can be done with pip3
+## Description
+This project is intended to prototype a real business need and was build in python and flask and postgreSQL.   The installation information is Mac OS X based, please adjust based on your operating system.
 
-the following are non required elements:
+## Dependencies
+- Python 3.11 
+- Postgresql 14 
+- Pip3 
 
-Postico 2.0.4 *
+## Installation 
+run the following:
+```
+brew install postgresql@14
+pip3 install flask
+pip3 install flask-sqlalchemy
+pip3 install flask-migrate
+pip3 install python-dotenv
+pip3 install psychopg2
+```
 
-The project was powered by:
-
-Caffeine, paper, Trello and of course supervision from my cats.
-
-As well as downloading the project files from github please make sure all required elements are installed and do the following to see this project at work:
-
+## Running the project
 1. git clone the repository
     git@github.com:LidzDev/pet-cms.git
-2. in the terminal:
-    cd pet-cms
-3. In the terminal in the application folder execute:
-    flask run
-2. Open a browser and open http://127.0.0.1:4999/
-3. In the terminal start postgres with:
-    brew services start postgresql@14
-4. In the terminal create the database with:
-    createdb pet_cms
-5. Open app.py with a code editor and comment line 8 and uncomment line 7 and replace 'postgres:password' with your postgres username
-6. In the terminal run:
+2. in the terminal run
+   ```
+   cd pet-cms
+   flask run
+   brew services start postgresql@14
+   createdb pet_cms
+   ```
+3. Open a browser and open http://127.0.0.1:4999/
+4. Open app.py with a code editor and comment line 8 and uncomment line 7 and replace 'postgres:password' with your postgres username
+5. In the terminal run:
+ ```
     flask db init
     flask db migrate
     flask db upgrade
     flask seed
+   ```
+## The project was powered by:
+
+Caffeine, paper, Trello and of course supervision from my cats.
