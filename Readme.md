@@ -41,6 +41,6 @@ pip3 install psychopg2
     flask db upgrade
     flask seed
    ```
-## The project was powered by:
+### The project was powered by:
 
 Caffeine, paper, Trello and of course supervision from my cats.
